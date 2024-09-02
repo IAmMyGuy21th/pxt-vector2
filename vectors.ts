@@ -1,6 +1,13 @@
 // Add your code here
 
 
+enum axis {
+    //% block="x"
+    x,
+    //% block="y"
+    y
+}
+
 /**
  * Custom blocks
  */
@@ -36,6 +43,36 @@ namespace vectors {
 
         public directionVector() {
             return new Vector2(this.x / this.mag(), this.y / this.mag())
+        }
+
+        public addArray(opArray: Vector2[]) {
+            let resultX = this.x
+            let resultY = this.y
+            for (let opItem of opArray) {
+                resultX += opItem.x
+                resultY += opItem.y
+            }
+            return new Vector2(resultX, resultY)
+        }
+
+        public subtractArray(opArray: Vector2[]) {
+            let resultX = this.x
+            let resultY = this.y
+            for (let opItem of opArray) {
+                resultX -= opItem.x
+                resultY -= opItem.y
+            }
+            return new Vector2(resultX, resultY)
+        }
+
+        public scaleArray(opArray: number[]) {
+            let resultX = this.x
+            let resultY = this.y
+            for (let opItem of opArray) {
+                resultX *= opItem
+                resultY *= opItem
+            }
+            return new Vector2(resultX, resultY)
         }
     }
 
@@ -105,5 +142,19 @@ namespace vectors {
     //% block="$vectorA * $vectorB"
     export function vectorMultiply(vectorA: Vector2, vectorB: Vector2) {
         return vectorA.matrixMultiply(vectorB)
+    }
+
+    /**
+     * TODO: Returns either x or y of the given 2d vector.
+     * @param vector
+     * @param axis Either x or y
+     */
+    //% block="$vector $axis"
+    export function vectorXY(vector: Vector2, axis: axis) {
+        if (axis === 0) {
+            return vector.x
+        } else {
+            return vector.y
+        }
     }
 }
