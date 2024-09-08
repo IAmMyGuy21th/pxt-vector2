@@ -8,6 +8,15 @@ enum axis {
     y
 }
 
+enum value {
+    //% block="position"
+    pos,
+    //% block="velocity"
+    vel,
+    //% block="size"
+    size
+}
+
 /**
  * Custom blocks
  */
@@ -76,6 +85,17 @@ namespace vectors {
         }
     }
 
+    export class Node {
+        pos: Vector2
+        vel: Vector2
+        size: number
+        public constructor(pos: Vector2, vel: Vector2, size: number) {
+            this.pos = pos
+            this.vel = vel
+            this.size = size
+        }
+    }
+
     /**
      * TODO: Creates a 2d vector.
      * @param x X Value
@@ -84,6 +104,33 @@ namespace vectors {
     //% block="Create New Vector2 $x $y"
     export function createVector2(x: number, y: number) {
         return new Vector2(x, y)
+    }
+
+    /**
+     * TODO: Creates a Node
+     * @param pos position
+     * @param vel velocity
+     * @param size size
+     */
+    //% block="Create new Node $pos $vel $size"
+    export function createNode(pos: Vector2, vel: Vector2, size: number) {
+        return new Node(pos, vel, size)
+    }
+
+    /**
+     * TODO: Returns one of a node's values
+     * @param $node node
+     * @param $val the value it will return
+     */
+    //% block="Node $node $val"
+    export function returnVal(node: Node, val: value) {
+        if (val == 0) {
+            return node.pos
+        } else if (val == 1) {
+            return node.vel
+        } else {
+            return node.size
+        }
     }
 
     /**
@@ -149,7 +196,7 @@ namespace vectors {
      * @param vector
      * @param axis Either x or y
      */
-    //% block="$vector $axis"
+    //% block="vector $vector $axis"
     export function vectorXY(vector: Vector2, axis: axis) {
         if (axis === 0) {
             return vector.x
