@@ -88,6 +88,26 @@ namespace vectors {
         public clone() {
             return new Vector2(this.x,this.y)
         }
+
+        public setAdd(vector: Vector2) {
+            this.x += vector.x
+            this.y += vector.y
+        }
+
+        public setSubtract(vector: Vector2) {
+            this.x -= vector.x
+            this.y -= vector.y
+        }
+
+        public setMultiply(vector: Vector2) {
+            this.x *= vector.x
+            this.y *= vector.y
+        }
+
+        public setDivide(vector: Vector2) {
+            this.x /= vector.x
+            this.y /= vector.y
+        }
     }
 
     export class Node {
