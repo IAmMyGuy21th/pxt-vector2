@@ -17,6 +17,7 @@ enum value {
     size
 }
 
+
 /**
  * Custom blocks
  */
@@ -83,6 +84,10 @@ namespace vectors {
             }
             return new Vector2(resultX, resultY)
         }
+        
+        public clone() {
+            return new Vector2(this.x,this.y)
+        }
     }
 
     export class Node {
@@ -94,6 +99,25 @@ namespace vectors {
             this.vel = vel
             this.size = size
         }
+    }
+
+    const zero = new Vector2(0,0)
+
+    /**
+     * TODO: returns zero vector
+     */
+    //% block="vector zero"
+    export function vectorZero() {
+        return zero.clone()
+    }
+
+    /**
+     * TODO: Clones vector
+     * @param vector vector to clone
+     */
+    //% block="clone $vector"
+    export function cloneVector(vector: Vector2) {
+        return vector.clone()
     }
 
     /**
