@@ -47,6 +47,10 @@ namespace vectors {
             return new Vector2(this.x * scaleFactor, this.y * scaleFactor)
         }
 
+        public divide(divider: number) {
+            return new Vector2(this.x / divider, this.y / divider)
+        }
+
         public matrixMultiply(otherVector: Vector2) {
             return new Vector2((this.x * otherVector.x) + (this.x * otherVector.y), (this.y * otherVector.x) + (this.y * otherVector.y))
         }
@@ -99,14 +103,14 @@ namespace vectors {
             this.y -= vector.y
         }
 
-        public setMultiply(vector: Vector2) {
-            this.x *= vector.x
-            this.y *= vector.y
+        public setMultiply(scale: number) {
+            this.x *= scale
+            this.y *= scale
         }
 
-        public setDivide(vector: Vector2) {
-            this.x /= vector.x
-            this.y /= vector.y
+        public setDivide(divider: number) {
+            this.x /= divider
+            this.y /= divider
         }
     }
 
@@ -223,6 +227,16 @@ namespace vectors {
     //% block="$vectorA * $scale"
     export function scaleVector(vectorA: Vector2, scale: number) {
         return vectorA.scale(scale)
+    }
+
+    /**
+     * TODO: Divides a 2d vector.
+     * @param vectorA Vector A
+     * @param divider Divider
+     */
+    //% block="$vectorA / $divider"
+    export function divideVector(vectorA: Vector2, divider: number) {
+        return vectorA.divide(divider)
     }
 
     /**
