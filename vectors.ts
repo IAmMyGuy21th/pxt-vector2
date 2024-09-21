@@ -262,4 +262,24 @@ namespace vectors {
             return vector.y
         }
     }
+
+    /**
+     * TODO: Sets a sprite position to a vector.
+     * @param sprite sprite to modify
+     * @param pos position
+     */
+    //% block="$sprite set position to $pos"
+    export function setSpritePos(sprite: Sprite, pos: Vector2) {
+        sprite.x = pos.x
+        sprite.y = pos.y
+    }
+
+    /**
+     * TODO: Converts vector into tilemap position.
+     * @param vec vector
+     */
+    //% block="$vec as tilepos"
+    export function vectorAsTilepos(vec: Vector2) {
+        return tiles.getTileLocation(vec.x, vec.y)
+    }
 }
