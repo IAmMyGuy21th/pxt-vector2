@@ -145,6 +145,42 @@ namespace vectors {
     }
 
     /**
+     * TODO: Returns a vector with a sprite position.
+     * @param sprite sprite
+     */
+    //% block="$sprite pos as vector"
+    export function spritepos(sprite: Sprite) {
+        return new Vector2(sprite.x, sprite.y)
+    }
+
+    /**
+     * TODO: Returns a vector with a sprite velocity.
+     * @param sprite sprite
+     */
+    //% block="$sprite vel as vector"
+    export function spritevel(sprite: Sprite) {
+        return new Vector2(sprite.vx, sprite.vy)
+    }
+
+    /**
+     * TODO: Returns a vector with a sprite acceleration.
+     * @param sprite sprite
+     */
+    //% block="$sprite accel as vector"
+    export function spriteaccel(sprite: Sprite) {
+        return new Vector2(sprite.ax, sprite.ay)
+    }
+
+    /**
+     * TODO: Returns a vector with a sprite size.
+     * @param sprite sprite
+     */
+    //% block="$sprite size as vector"
+    export function spritesize(sprite: Sprite) {
+        return new Vector2(sprite.sx, sprite.sy)
+    }
+
+    /**
      * TODO: Creates a 2d vector.
      * @param x X Value
      * @param y Y Value
@@ -273,6 +309,48 @@ namespace vectors {
         sprite.x = pos.x
         sprite.y = pos.y
     }
+
+    /**
+     * TODO: Sets a sprite velocity to a vector.
+     * @param sprite sprite to modify
+     * @param vel velocity
+     */
+    //% block="$sprite set position to $pos"
+    export function setSpriteVel(sprite: Sprite, vel: Vector2) {
+        sprite.vx = vel.x
+        sprite.vy = vel.y
+    }    
+    
+    /**
+     * TODO: Sets a sprite acceleration to a vector.
+     * @param sprite sprite to modify
+     * @param accel acceleration
+     */
+    //% block="$sprite set position to $pos"
+    export function setSpriteAccel(sprite: Sprite, accel: Vector2) {
+        sprite.ax = accel.x
+        sprite.ay = accel.y
+    }
+
+    /**
+     * TODO: Sets a sprite size to a vector.
+     * @param sprite sprite to modify
+     * @param size size
+     */
+    //% block="$sprite set position to $pos"
+    export function setSpriteSize(sprite: Sprite, size: Vector2) {
+        sprite.sx = size.x
+        sprite.sy = size.y
+    }
+
+    /**
+     * TODO: Returns Controller acceleration as a vector
+     */
+    //% block="acceleration as vector"
+    export function accelAsVector() {
+        return new Vector2(controller.acceleration(ControllerDimension.X), controller.acceleration(ControllerDimension.Y))
+    }
+
 
     /**
      * TODO: Converts vector into tilemap position.
