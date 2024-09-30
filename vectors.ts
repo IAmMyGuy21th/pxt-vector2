@@ -315,7 +315,7 @@ namespace vectors {
      * @param sprite sprite to modify
      * @param vel velocity
      */
-    //% block="$sprite set position to $pos"
+    //% block="$sprite set velocity to $vel"
     export function setSpriteVel(sprite: Sprite, vel: Vector2) {
         sprite.vx = vel.x
         sprite.vy = vel.y
@@ -326,7 +326,7 @@ namespace vectors {
      * @param sprite sprite to modify
      * @param accel acceleration
      */
-    //% block="$sprite set position to $pos"
+    //% block="$sprite set acceleration to $accel"
     export function setSpriteAccel(sprite: Sprite, accel: Vector2) {
         sprite.ax = accel.x
         sprite.ay = accel.y
@@ -337,7 +337,7 @@ namespace vectors {
      * @param sprite sprite to modify
      * @param size size
      */
-    //% block="$sprite set position to $pos"
+    //% block="$sprite set size to $size"
     export function setSpriteSize(sprite: Sprite, size: Vector2) {
         sprite.sx = size.x
         sprite.sy = size.y
